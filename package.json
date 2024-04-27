@@ -10,7 +10,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "test:ci": "jest --coverage --silent --ci"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^6.4.2",
@@ -38,6 +39,7 @@
     "vite": "^5.2.0"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "eslint --cache --fix"
+    "*.{ts,tsx}": "eslint --cache --fix",
+    "*": "prettier --write --ignore-unknown"
   }
 }
